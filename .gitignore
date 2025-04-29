@@ -31,4 +31,4 @@ build/
 
 ### VS Code ###
 .vscode/
-.env
+.envauth-service/src/main/resources/application.properties

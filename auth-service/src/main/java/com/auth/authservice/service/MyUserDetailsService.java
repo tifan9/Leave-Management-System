@@ -1,7 +1,7 @@
 package com.auth.authservice.service;
 
 import com.auth.authservice.model.UserPrincipal;
-import com.auth.authservice.model.Users;
+import com.auth.authservice.model.User;
 import com.auth.authservice.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,7 +16,7 @@ public class MyUserDetailsService implements UserDetailsService {
     private UserRepo repo;
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Users user= repo.findByUsername(username);
+        User user= repo.findByUsername(username);
         if(user == null){
             System.out.println("user not found");
             throw new UsernameNotFoundException("user not found");
